@@ -1,0 +1,113 @@
+{
+  "entities": {
+    "Property": {
+      "title": "Property",
+      "description": "A real estate property listing managed in the control panel",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the property"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title or display name of the property"
+        },
+        "price": {
+          "type": "string",
+          "description": "Formatted price of the property (e.g. Gs. 150.000.000)"
+        },
+        "priceRaw": {
+          "type": "integer",
+          "description": "Raw numeric price for calculation, sorting, and comparison"
+        },
+        "location": {
+          "type": "string",
+          "description": "Strategic physical location address"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["sale", "rent"],
+          "description": "Type of transition (sale or rent)"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["house", "land", "apartment", "cabin"],
+          "description": "Property asset category"
+        },
+        "area": {
+          "type": "string",
+          "description": "Area dimensions of the property (e.g., 12x30 ms)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Persuasive marketing copy or description (can be written by Gemini)"
+        },
+        "images": {
+          "type": "array",
+          "description": "Array of Unsplash, Google Drive, or uploaded image URLs"
+        },
+        "video": {
+          "type": "string",
+          "description": "Optional video presentation URL or local path"
+        },
+        "featured": {
+          "type": "boolean",
+          "description": "Whether to display this property highlighted at the top"
+        },
+        "highlightFeature": {
+          "type": "string",
+          "description": "Special attractive tag like 'Costa de Río' or 'A sola firma'"
+        },
+        "natureScore": {
+          "type": "integer",
+          "description": "Visual level of connection with nature (1 to 5)"
+        },
+        "amenities": {
+          "type": "array",
+          "description": "List of key features, advantages, and amenities of the lot"
+        },
+        "hasTitle": {
+          "type": "boolean",
+          "description": "Whether the property has clean legal title transfer papers ready"
+        },
+        "partnerAlias": {
+          "type": "string",
+          "description": "Name or handle of the allied partner"
+        },
+        "partnerPhone": {
+          "type": "string",
+          "description": "WhatsApp/cellular contact number of the partner"
+        },
+        "commissionPercent": {
+          "type": "integer",
+          "description": "Negotiated agency commission percentage"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "published"],
+          "description": "Listing status for validation and posting"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp when the property was listed"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "priceRaw",
+        "location",
+        "type",
+        "category",
+        "partnerPhone"
+      ]
+    }
+  },
+  "firestore": {
+    "/properties/{propertyId}": {
+      "schema": "Property",
+      "description": "Collection of all land and home listings available in the catalog"
+    }
+  }
+}

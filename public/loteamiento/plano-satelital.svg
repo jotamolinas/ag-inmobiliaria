@@ -1,0 +1,306 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="100%" height="100%" style="font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <!-- Background Gradient for Earth/Soil -->
+    <radialGradient id="soil-base" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#1E381A" />
+      <stop offset="70%" stop-color="#142611" />
+      <stop offset="100%" stop-color="#0E1C0B" />
+    </radialGradient>
+
+    <!-- Forest Canopy Gradients -->
+    <radialGradient id="tree-center" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#326E28" />
+      <stop offset="70%" stop-color="#1E4417" />
+      <stop offset="100%" stop-color="#122A0E" />
+    </radialGradient>
+    <radialGradient id="tree-dark" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#24541C" />
+      <stop offset="80%" stop-color="#153310" />
+      <stop offset="100%" stop-color="#0C1F09" />
+    </radialGradient>
+    <radialGradient id="tree-light" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4E993B" />
+      <stop offset="85%" stop-color="#2C6120" />
+      <stop offset="100%" stop-color="#1C4013" />
+    </radialGradient>
+    <radialGradient id="tree-accent" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6BAD4B" />
+      <stop offset="85%" stop-color="#3A7523" />
+      <stop offset="100%" stop-color="#214A12" />
+    </radialGradient>
+
+    <!-- Paraguayan Clay Red Soil Road Gradients -->
+    <linearGradient id="red-clay-road" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9C442A" />
+      <stop offset="50%" stop-color="#AA4D32" />
+      <stop offset="100%" stop-color="#8B3C24" />
+    </linearGradient>
+    <linearGradient id="red-clay-vertical" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B3C24" />
+      <stop offset="50%" stop-color="#AA4D32" />
+      <stop offset="100%" stop-color="#9C442A" />
+    </linearGradient>
+
+    <!-- Tin Metal Roof Gradients -->
+    <linearGradient id="metal-roof" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A1A1AA" />
+      <stop offset="50%" stop-color="#D4D4D8" />
+      <stop offset="100%" stop-color="#71717A" />
+    </linearGradient>
+    <linearGradient id="rust-roof" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#B45309" />
+      <stop offset="60%" stop-color="#78350F" />
+      <stop offset="100%" stop-color="#451A03" />
+    </linearGradient>
+
+    <!-- Drop shadow for text labels to pop over organic imagery -->
+    <filter id="text-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.95"/>
+    </filter>
+    <filter id="badge-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Arrow Marker -->
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#FFFFFF"/>
+    </marker>
+  </defs>
+
+  <!-- Base Satellite Ground Texture / Deep Green Forest Area -->
+  <rect width="100%" height="100%" fill="url(#soil-base)" />
+
+  <!-- DENSE FOREST BACKGROUND IN OUTER SECTORS (CANOPIES COGNITIVE GRAPHICS) -->
+  <g id="forest-background" opacity="0.85">
+    <!-- Top Forest Sector -->
+    <circle cx="80" cy="50" r="45" fill="url(#tree-dark)" />
+    <circle cx="130" cy="40" r="50" fill="url(#tree-center)" />
+    <circle cx="190" cy="35" r="40" fill="url(#tree-light)" />
+    <circle cx="250" cy="45" r="55" fill="url(#tree-dark)" />
+    <circle cx="310" cy="30" r="40" fill="url(#tree-accent)" />
+    <circle cx="370" cy="40" r="48" fill="url(#tree-center)" />
+    <circle cx="430" cy="35" r="52" fill="url(#tree-dark)" />
+    <circle cx="490" cy="50" r="45" fill="url(#tree-light)" />
+    <circle cx="550" cy="30" r="55" fill="url(#tree-accent)" />
+    <circle cx="610" cy="40" r="40" fill="url(#tree-dark)" />
+    <circle cx="670" cy="35" r="50" fill="url(#tree-center)" />
+    <circle cx="730" cy="45" r="45" fill="url(#tree-light)" />
+    <circle cx="790" cy="30" r="48" fill="url(#tree-dark)" />
+    <circle cx="850" cy="50" r="55" fill="url(#tree-center)" />
+
+    <!-- Left Margins Forest -->
+    <circle cx="30" cy="120" r="45" fill="url(#tree-dark)" />
+    <circle cx="45" cy="180" r="50" fill="url(#tree-center)" />
+    <circle cx="35" cy="240" r="40" fill="url(#tree-light)" />
+    <circle cx="20" cy="300" r="48" fill="url(#tree-dark)" />
+    <circle cx="40" cy="360" r="52" fill="url(#tree-center)" />
+
+    <!-- Right Margins Forest -->
+    <circle cx="860" cy="120" r="55" fill="url(#tree-dark)" />
+    <circle cx="875" cy="190" r="45" fill="url(#tree-light)" />
+    <circle cx="855" cy="260" r="50" fill="url(#tree-center)" />
+    <circle cx="880" cy="330" r="40" fill="url(#tree-accent)" />
+    <circle cx="860" cy="400" r="48" fill="url(#tree-dark)" />
+    <circle cx="870" cy="470" r="52" fill="url(#tree-center)" />
+
+    <!-- Bottom Margins Forest -->
+    <circle cx="50" cy="540" r="45" fill="url(#tree-dark)" />
+    <circle cx="110" cy="550" r="50" fill="url(#tree-center)" />
+    <circle cx="170" cy="545" r="40" fill="url(#tree-light)" />
+    <circle cx="230" cy="560" r="48" fill="url(#tree-dark)" />
+    <circle cx="710" cy="555" r="45" fill="url(#tree-light)" />
+    <circle cx="770" cy="540" r="50" fill="url(#tree-center)" />
+    <circle cx="830" cy="560" r="55" fill="url(#tree-dark)" />
+    <circle cx="885" cy="545" r="40" fill="url(#tree-accent)" />
+
+    <!-- Internal scattered organic canopies to break uniformity -->
+    <circle cx="175" cy="145" r="22" fill="url(#tree-light)" opacity="0.7"/>
+    <circle cx="290" cy="255" r="18" fill="url(#tree-accent)" opacity="0.6"/>
+    <circle cx="410" cy="135" r="25" fill="url(#tree-dark)" opacity="0.75"/>
+    <circle cx="510" cy="385" r="20" fill="url(#tree-light)" opacity="0.7"/>
+    <circle cx="620" cy="285" r="24" fill="url(#tree-accent)" opacity="0.6"/>
+    <circle cx="725" cy="145" r="22" fill="url(#tree-light)" opacity="0.7"/>
+  </g>
+
+  <!-- ROOFTOPS OF NEIGHBORING HOUSES (To give true life-like satellite context) -->
+  <!-- Neighbor House 1 (Top Left) -->
+  <g transform="translate(140, 45) rotate(-12)" opacity="0.9">
+    <rect x="0" y="0" width="65" height="40" fill="url(#rust-roof)" rx="1"/>
+    <!-- Ridge line -->
+    <line x1="0" y1="20" x2="65" y2="20" stroke="#451A03" stroke-width="1.5" />
+    <text x="32" y="24" fill="#FBBF24" font-size="7" font-weight="bold" opacity="0.4" text-anchor="middle">VECINO</text>
+  </g>
+
+  <!-- Neighbor House 2 (Top Center/Right) -->
+  <g transform="translate(520, 35) rotate(8)" opacity="0.85">
+    <rect x="0" y="0" width="55" height="35" fill="url(#metal-roof)" rx="1" />
+    <line x1="27" y1="0" x2="27" y2="35" stroke="#52525B" stroke-width="1.5" />
+  </g>
+
+  <!-- Neighbor Shed/House (Bottom Center) -->
+  <g transform="translate(420, 525) rotate(-5)" opacity="0.85">
+    <rect x="0" y="0" width="45" height="35" fill="url(#rust-roof)" rx="1"/>
+    <line x1="0" y1="17.5" x2="45" y2="17.5" stroke="#451A03" stroke-width="1.5" />
+  </g>
+
+
+  <!-- RED DIRT ROADS (PARAGUAYAN "TIERRA ROJA") -->
+  <g id="roads">
+    <!-- Access road on the left (Calle de Acceso) -->
+    <!-- Curved slightly and blending naturally -->
+    <path d="M 50 620 L 55 500 L 70 380 L 110 240 L 138 100 L 142 0 L 102 0 L 98 100 L 70 240 L 30 380 L 15 500 L 10 620 Z" fill="url(#red-clay-vertical)" opacity="0.9"/>
+    
+    <!-- Calle Proyectada Nº 1 - Main Frontal Dirt Road (Horizontal Area) -->
+    <!-- y coordinate matches 417 to 457 perfectly inside transform (10, 20) => y=437 to y=477 overall -->
+    <rect x="110" y="437" width="635" height="40" fill="url(#red-clay-road)" opacity="0.95"/>
+    <!-- Road edges -->
+    <line x1="110" y1="437" x2="745" y2="437" stroke="#78350F" stroke-width="1.5" />
+    <line x1="110" y1="477" x2="745" y2="477" stroke="#78350F" stroke-width="1.5" />
+    
+    <!-- Side street connection -->
+    <path d="M 110 437 C 100 437, 95 425, 95 410 C 95 395, 102 245, 110 240 L 115 240 L 100 395 L 102 415 L 112 437 Z" fill="url(#red-clay-vertical)" opacity="0.4"/>
+  </g>
+
+
+  <!-- MAIN MAP DRAWING ALIGNMENT GROUP (transform="translate(10, 20)") -->
+  <g transform="translate(10, 20)">
+
+    <!-- Road labels / street indications -->
+    <text x="442" y="442" font-size="11" font-weight="950" fill="#FFFFFF" text-anchor="middle" letter-spacing="2" filter="url(#text-shadow)">CALLE PROYECTADA Nº 1 - Tierra Roja</text>
+    <text x="442" y="465" font-size="9.5" font-weight="bold" fill="#FEE2E2" text-anchor="middle" filter="url(#text-shadow)">Ancho 8.00m — Doble acceso público y directo al Río Acaray</text>
+
+    <!-- Right Boundary indicator (Calle existente) -->
+    <g transform="translate(745, 170)">
+      <text x="25" y="125" font-size="9" font-weight="bold" fill="#FEE2E2" transform="rotate(90, 25, 125)" text-anchor="middle" filter="url(#text-shadow)">PROPIEDAD PRIVADA / HOY CALLE EXISTENTE</text>
+    </g>
+
+
+    <!-- LOT BLOCKS & SUBDIVISIONS - OUTLINED IN BOLD NEON ELECTRIC RED -->
+    <!-- Matches lot coordinates of plano-tecnico.svg precisely for pixel-perfect CAD transition! -->
+    
+    <!-- COLUMN A (LEFT): Lots 01 al 04 -->
+    <!-- Lot 04 -->
+    <rect x="150" y="170" width="152.5" height="61.8" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="226" y="200" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">LOTE 04</text>
+    <text x="226" y="218" font-size="9" font-weight="800" fill="#4ADE80" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+    
+    <!-- Lot 03 -->
+    <rect x="150" y="231.8" width="152.5" height="61.7" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="226" y="261" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">LOTE 03</text>
+    <text x="226" y="279" font-size="9" font-weight="800" fill="#4ADE80" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+    <!-- Lot 02 -->
+    <rect x="150" y="293.5" width="152.5" height="61.7" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="226" y="323" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">LOTE 02</text>
+    <text x="226" y="341" font-size="9" font-weight="800" fill="#4ADE80" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+    <!-- Lot 01 -->
+    <rect x="150" y="355.2" width="152.5" height="61.8" fill="rgba(244, 63, 94, 0.22)" stroke="#FF1E1E" stroke-width="2.5" />
+    <!-- Sold Pattern lines inside sold lot -->
+    <line x1="150" y1="355.2" x2="302.5" y2="417" stroke="rgba(255, 30, 30, 0.2)" stroke-width="1" />
+    <line x1="150" y1="417" x2="302.5" y2="355.2" stroke="rgba(255, 30, 30, 0.2)" stroke-width="1" />
+    <text x="226" y="385" font-size="14" font-weight="900" fill="#D1D5DB" text-anchor="middle" filter="url(#text-shadow)">LOTE 01</text>
+    <text x="226" y="403" font-size="9.5" font-weight="900" fill="#F87171" text-anchor="middle" filter="url(#text-shadow)">★ VENDIDO</text>
+
+
+    <!-- MIDDLE CORRIDORS: Lots 05, 06, 07 y 08 (Vertical columns) -->
+    <!-- Lot 05 -->
+    <rect x="302.5" y="170" width="60" height="247" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="332.5" y="285" font-size="14" font-weight="900" fill="#FFFFFF" transform="rotate(-90, 332.5, 285)" text-anchor="middle" filter="url(#text-shadow)">LOTE 05</text>
+    <text x="332.5" y="310" font-size="9.5" font-weight="800" fill="#4ADE80" transform="rotate(-90, 332.5, 310)" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+    <!-- Lot 06 -->
+    <rect x="362.5" y="170" width="60" height="247" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="392.5" y="285" font-size="14" font-weight="900" fill="#FFFFFF" transform="rotate(-90, 392.5, 285)" text-anchor="middle" filter="url(#text-shadow)">LOTE 06</text>
+    <text x="392.5" y="310" font-size="9.5" font-weight="800" fill="#4ADE80" transform="rotate(-90, 392.5, 310)" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+    <!-- Lot 07 -->
+    <rect x="422.5" y="170" width="60" height="247" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="452.5" y="285" font-size="14" font-weight="900" fill="#FFFFFF" transform="rotate(-90, 452.5, 285)" text-anchor="middle" filter="url(#text-shadow)">LOTE 07</text>
+    <text x="452.5" y="310" font-size="9.5" font-weight="800" fill="#4ADE80" transform="rotate(-90, 452.5, 310)" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+    <!-- Lot 08 -->
+    <rect x="482.5" y="170" width="60" height="247" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="512.5" y="285" font-size="14" font-weight="900" fill="#FFFFFF" transform="rotate(-90, 512.5, 285)" text-anchor="middle" filter="url(#text-shadow)">LOTE 08</text>
+    <text x="512.5" y="310" font-size="9.5" font-weight="800" fill="#4ADE80" transform="rotate(-90, 512.5, 310)" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+
+    <!-- COLUMN B (RIGHT): Lots 09 al 12 (Horizontal plots) -->
+    <!-- Lot 09 -->
+    <rect x="542.5" y="170" width="192.5" height="61.8" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="638.75" y="200" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">LOTE 09</text>
+    <text x="638.75" y="218" font-size="9" font-weight="800" fill="#4ADE80" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+    <!-- Lot 10 -->
+    <rect x="542.5" y="231.8" width="192.5" height="61.7" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="638.75" y="261" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">LOTE 10</text>
+    <text x="638.75" y="279" font-size="9" font-weight="800" fill="#4ADE80" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+    <!-- Lot 11 -->
+    <rect x="542.5" y="293.5" width="192.5" height="61.7" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="638.75" y="323" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">LOTE 11</text>
+    <text x="638.75" y="341" font-size="9" font-weight="800" fill="#4ADE80" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+    <!-- Lot 12 -->
+    <rect x="542.5" y="355.2" width="192.5" height="61.8" fill="rgba(34, 197, 94, 0.05)" stroke="#FF1E1E" stroke-width="2.5" />
+    <text x="638.75" y="385" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">LOTE 12</text>
+    <text x="638.75" y="403" font-size="9" font-weight="800" fill="#4ADE80" text-anchor="middle" filter="url(#text-shadow)">DISPONIBLE</text>
+
+
+    <!-- OVERLAYED TECHNICAL DIMENSION DATA (White Labels with High contrast drop shadows) -->
+    
+    <!-- Horizontal markers for Front widths of Col A -->
+    <text x="226" y="185" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">30.50 m</text>
+    
+    <!-- Vertical dimensions indicators for individual lot heights of Col A -->
+    <text x="162" y="206" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="start" filter="url(#text-shadow)">12.33 m</text>
+    <text x="162" y="267" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="start" filter="url(#text-shadow)">12.33 m</text>
+    <text x="162" y="329" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="start" filter="url(#text-shadow)">12.33 m</text>
+    <text x="162" y="391" font-size="8.5" font-weight="900" fill="#E5E7EB" text-anchor="start" filter="url(#text-shadow)">12.33 m</text>
+
+    <!-- Front line markers on the street for corridors -->
+    <text x="332.5" y="415" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">12.00m</text>
+    <text x="392.5" y="415" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">12.00m</text>
+    <text x="452.5" y="415" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">12.00m</text>
+    <text x="512.5" y="415" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">12.00m</text>
+
+    <!-- Corridors total depth double arrows & dimension -->
+    <line x1="452.5" y1="185" x2="452.5" y2="400" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="1 3" marker-start="url(#arrow-white)" marker-end="url(#arrow-white)"/>
+    <text x="442" y="300" font-size="9" font-weight="900" fill="#FFFFFF" transform="rotate(-90, 442, 300)" text-anchor="middle" filter="url(#text-shadow)">PROFUNDIDAD: 49.35 m</text>
+
+    <!-- Horizontal front widths of Col B -->
+    <text x="638.75" y="185" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle" filter="url(#text-shadow)">38.50 m</text>
+    
+    <!-- Vertical heights for Col B -->
+    <text x="720" y="206" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="end" filter="url(#text-shadow)">12.33 m</text>
+    <text x="720" y="267" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="end" filter="url(#text-shadow)">12.33 m</text>
+    <text x="720" y="329" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="end" filter="url(#text-shadow)">12.33 m</text>
+    <text x="720" y="391" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="end" filter="url(#text-shadow)">12.33 m</text>
+
+  </g>
+
+  <!-- TITLE BAR CARD GIVING MAXIMUM SAT-NAV CONTEXT OVERLAY -->
+  <g transform="translate(45, 45)" filter="url(#badge-shadow)">
+    <!-- Sleek translucent badge -->
+    <rect x="0" y="0" width="415" height="58" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="14" />
+    <circle cx="28" cy="29" r="14" fill="#EF4444" />
+    <!-- Pulse ring -->
+    <circle cx="28" cy="29" r="19" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6">
+      <animate attributeName="r" values="14;22;14" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <!-- Dot -->
+    <circle cx="28" cy="29" r="4" fill="#FFFFFF" />
+
+    <text x="56" y="24" font-size="12" font-weight="900" fill="#FFFFFF" letter-spacing="0.5">FOTO SATELITAL CON ALTURAS Y LINDEROS</text>
+    <text x="56" y="39" font-size="10.5" font-weight="bold" fill="#FCA5A5">Exclusivo Km 12 Acaray • Posesión Inmediata</text>
+    <text x="56" y="49" font-size="8" fill="#D1D5DB">Alineado con catastro general y plano aprobado por ANDE</text>
+  </g>
+
+  <!-- MAP COMPASS -->
+  <g stroke="#FFFFFF" stroke-width="1" filter="url(#text-shadow)">
+    <circle cx="820" cy="75" r="26" fill="rgba(15, 23, 42, 0.7)" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="820" y1="92" x2="820" y2="58" stroke="#FF3B30" stroke-width="2.5" marker-end="url(#arrow-white)"/>
+    <text x="816" y="52" font-size="11" font-weight="900" fill="#FFFFFF">N</text>
+  </g>
+</svg>

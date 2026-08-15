@@ -1,0 +1,93 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global Safety Net (Rule 1)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Common helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isVerifiedEmail(email) {
+      return isSignedIn() && request.auth.token.email == email;
+    }
+
+    function isSuperAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == "jotamolinas@gmail.com" ||
+        request.auth.token.email == "everacosti@gmail.com" ||
+        request.auth.token.email == "everacost@gmail.com"
+      );
+    }
+
+    function isFullAdmin() {
+      return isSuperAdmin() || (
+        isSignedIn() && 
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email)) &&
+        get(/databases/$(database)/documents/admins/$(request.auth.token.email)).data.get('role', 'admin') == 'admin'
+      );
+    }
+
+    function isClientAdmin() {
+      return isSignedIn() && 
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email)) &&
+        get(/databases/$(database)/documents/admins/$(request.auth.token.email)).data.get('role', 'admin') == 'client';
+    }
+
+    function isAnyAdmin() {
+      return isSuperAdmin() || (isSignedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.token.email)));
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Properties validation helper - robust and flexible
+    function isValidProperty(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.title is string && data.title.size() <= 500 &&
+             data.price is string && data.price.size() <= 64 &&
+             data.location is string && data.location.size() <= 1000 &&
+             data.type is string && (data.type == "sale" || data.type == "rent") &&
+             data.category is string && (data.category == "house" || data.category == "land" || data.category == "apartment" || data.category == "cabin" || data.category == "duplex" || data.category == "commercial");
+    }
+
+    match /properties/{propertyId} {
+      // 1. Reads are open for published, or fully allowed for any admin
+      allow get: if resource.data.status == "published" || isAnyAdmin();
+      allow list: if resource.data.status == "published" || isAnyAdmin();
+
+      // 2. Writes
+      allow create: if isAnyAdmin() &&
+                    isValidId(propertyId) &&
+                    isValidProperty(request.resource.data) &&
+                    request.resource.data.id == propertyId &&
+                    request.resource.data.createdAt == request.time &&
+                    (isFullAdmin() || request.resource.data.createdBy == request.auth.token.email);
+
+      allow update: if isAnyAdmin() &&
+                    isValidId(propertyId) &&
+                    isValidProperty(request.resource.data) &&
+                    request.resource.data.id == resource.data.id &&
+                    request.resource.data.createdAt == resource.data.createdAt &&
+                    (isFullAdmin() || resource.data.createdBy == request.auth.token.email);
+
+      allow delete: if isFullAdmin() && isValidId(propertyId) || 
+                       (isClientAdmin() && isValidId(propertyId) && resource.data.createdBy == request.auth.token.email);
+    }
+    
+    match /admins/{adminId} {
+      allow read: if isAnyAdmin();
+      allow write: if isFullAdmin();
+    }
+    
+    match /settings/{document=**} {
+      allow read: if true;
+      allow write: if isFullAdmin();
+    }
+  }
+}

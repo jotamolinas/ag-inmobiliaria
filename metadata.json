@@ -1,0 +1,6 @@
+{
+  "name": "AG Servicios Inmobiliarios",
+  "description": "Buscador y catálogo minimalista de inmuebles premium en venta y alquiler. Integrado con la naturaleza en Alto Paraná, Paraguay.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

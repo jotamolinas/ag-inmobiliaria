@@ -1,0 +1,8 @@
+# www.robotstxt.org/
+
+# Permitir a todos los motores de búsqueda rastrear el sitio completo
+User-agent: *
+Allow: /
+
+# Ubicación del Sitemap
+Sitemap: https://www.aginmobiliaria.com.py/sitemap.xml

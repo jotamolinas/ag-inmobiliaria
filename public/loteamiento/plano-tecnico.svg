@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="100%" height="100%" style="background-color: #FAFBF9; font-family: 'JetBrains Mono', 'Fira Code', monospace; color: #3D403E;">
+  <!-- Technical blueprint background subtle grid -->
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(130, 181, 21, 0.04)" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#82B515"/>
+    </marker>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#4B5563"/>
+    </marker>
+  </defs>
+  
+  <!-- Fill background grid -->
+  <rect width="100%" height="100%" fill="#FAFBF9"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- Border and Engineering Frame -->
+  <rect x="20" y="20" width="860" height="580" fill="none" stroke="#2E312D" stroke-width="2"/>
+  <rect x="25" y="25" width="850" height="570" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <!-- Outer Dimension Indicators & compass orientation -->
+  <g stroke="#94A3B8" stroke-width="1">
+    <!-- North arrow -->
+    <circle cx="820" cy="75" r="30" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="820" y1="95" x2="820" y2="45" stroke="#82B515" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="816" y="40" font-size="12" font-weight="bold" fill="#82B515">N</text>
+  </g>
+
+  <!-- Title block inside diagram -->
+  <g transform="translate(45, 55)">
+    <text x="0" y="0" font-size="20" font-weight="900" fill="#2E312D" letter-spacing="1">PLANO TÉCNICO DE FRACCIONAMIENTO</text>
+    <text x="0" y="22" font-size="12" font-weight="bold" fill="#82B515">LOTEAMIENTO KM 12 ACARAY • CON ACCESO AL RÍO</text>
+    <text x="0" y="38" font-size="10" fill="#64748B">Superficie Total Homologada • Posesión Inmediata</text>
+  </g>
+
+  <!-- MAP REPRESENTATION GRID -->
+  <!-- 
+    Offsets to center the drawing beautifully:
+    Map region x: 80 to 820.
+    Width available: 740px. 
+    Heights region y: 150 to 520. Height available: 370px.
+    
+    Dimensions setup:
+    Let's draw:
+    - Left boundary line (x=160) to Right boundary line (x=760). Width = 600px.
+      This corresponds to 117.00 m. 
+      Scale: 600px / 117.00m = ~5.13 px per meter.
+      Let's round to 5.0 px per meter!
+      Length: 117.00 m * 5 = 585px.
+      Let's start at x = 160. End at x = 160 + 585 = 745.
+      
+    - Heights:
+      Total lot-block height is 49.35 m.
+      Scale: 49.35 m * 5 = 246.75px. Let's round to 247px.
+      Top boundary line at y = 170.
+      Lot block bottom line at y = 170 + 247 = 417.
+      Calle Proyectada (8.0m wide): 8 * 5 = 40px wide.
+      Bottom street line at y = 417 + 40 = 457.
+  -->
+  
+  <g transform="translate(10, 20)">
+    <!-- Main Road "CALLE PROYECTADA N° 1" -->
+    <rect x="150" y="417" width="585" height="40" fill="rgba(130, 181, 21, 0.05)" stroke="#64748B" stroke-dasharray="4 4" stroke-width="1"/>
+    <text x="442" y="442" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle" letter-spacing="2">CALLE PROYECTADA Nº 1 - Ancho 8.00m</text>
+    <!-- Arrow indicating street length and direction -->
+    <line x1="160" y1="450" x2="725" y2="450" stroke="#475569" stroke-width="1" marker-end="url(#arrow-dark)" marker-start="url(#arrow-dark)"/>
+    <text x="442" y="465" font-size="9" fill="#64748B" text-anchor="middle">N-17°00'-E — 117.00 m</text>
+
+    <!-- RIGHT BOUNDARY (Calle Existente) -->
+    <g transform="translate(745, 170)">
+      <!-- Technical text aligned vertically -->
+      <text x="25" y="125" font-size="9" fill="#64748B" transform="rotate(90, 25, 125)" text-anchor="middle">PROPIEDAD PRIVADA / HOY CALLE EXISTENTE</text>
+      <text x="40" y="125" font-size="9" font-weight="bold" fill="#475569" transform="rotate(90, 40, 125)" text-anchor="middle">N-73°00'-W — 57.35 m</text>
+    </g>
+
+    <!-- LEFT BOUNDARY -->
+    <g transform="translate(130, 170)">
+      <text x="-15" y="125" font-size="9" font-weight="bold" fill="#475569" transform="rotate(-90, -15, 125)" text-anchor="middle">S-73°00'-E — 57.35 m (Linderos)</text>
+    </g>
+
+    <!-- TOP BOUNDARY (Límite norte de la Fracción) -->
+    <line x1="150" y1="170" x2="735" y2="170" stroke="#475569" stroke-width="1"/>
+    <text x="442" y="158" font-size="9" font-weight="bold" fill="#475569" text-anchor="middle">S-17°00'-W — 117.00 m</text>
+
+    <!-- LOT BLOCKS & SPECIFIC DIVISIONS -->
+    <!--
+      Scale is 5px per meter.
+      Columns:
+      1) Left block: Lots 1 to 4. Front: 30.50m (30.5 * 5 = 152.5px width).
+         x starts at 150. Ends at 150 + 152.5 = 302.5.
+      2) Middle corridor blocks: Lots 5 to 8. Width 12.00m each.
+         4 lots of 12m = 48m width (48 * 5 = 240px width).
+         - Lot 5: x = 302.5 to 362.5 (12m)
+         - Lot 6: x = 362.5 to 422.5 (12m)
+         - Lot 7: x = 422.5 to 482.5 (12m)
+         - Lot 8: x = 482.5 to 542.5 (12m)
+      3) Right block: Lots 9 to 12. Width 38.50m (38.5 * 5 = 192.5px width).
+         x starts at 542.5. Ends at 542.5 + 192.5 = 735.
+         Total width check: 152.5 + 240 + 192.5 = 585px = 117.00m. PERFECT!
+         
+      Heights (Lots 1-4 & 9-12 are stacked vertically):
+      Total height = 49.35m (247px).
+      4 Lots of ~12.33m (12.33m * 5 = 61.65px height).
+      - Lot 4 (Top):    y = 170 to 231.8  (width: 61.8px = 12.36m)
+      - Lot 3 (Middle): y = 231.8 to 293.5 (width: 61.7px = 12.33m)
+      - Lot 2 (Middle): y = 293.5 to 355.2 (width: 61.7px = 12.33m)
+      - Lot 1 (Bottom): y = 355.2 to 417   (width: 61.8px = 12.33m)
+      
+      Middle lots 5, 6, 7, 8 are continuous vertical strips:
+      y = 170 to 417 (Height = 49.35m = 247px).
+    -->
+
+    <!-- LOT COLUMNS DRAWINGS -->
+
+    <!-- COLUMN A (LEFT): Lotes 01 al 04 -->
+    <!-- Lot 04 -->
+    <rect x="150" y="170" width="152.5" height="61.8" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="152" y="172" width="148.5" height="57.8" fill="rgba(130, 181, 21, 0.02)" />
+    <text x="226" y="206" font-size="14" font-weight="bold" fill="#2E312D" text-anchor="middle">LOTE 04</text>
+    <text x="226" y="222" font-size="8" fill="#64748B" text-anchor="middle">30.50m x 12.36m</text>
+    
+    <!-- Lot 03 -->
+    <rect x="150" y="231.8" width="152.5" height="61.7" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="152" y="233.8" width="148.5" height="57.7" fill="rgba(130, 181, 21, 0.02)" />
+    <text x="226" y="267" font-size="14" font-weight="bold" fill="#2E312D" text-anchor="middle">LOTE 03</text>
+    <text x="226" y="283" font-size="8" fill="#64748B" text-anchor="middle">30.50m x 12.33m</text>
+
+    <!-- Lot 02 -->
+    <rect x="150" y="293.5" width="152.5" height="61.7" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="152" y="295.5" width="148.5" height="57.7" fill="rgba(130, 181, 21, 0.02)" />
+    <text x="226" y="329" font-size="14" font-weight="bold" fill="#2E312D" text-anchor="middle">LOTE 02</text>
+    <text x="226" y="345" font-size="8" fill="#64748B" text-anchor="middle">30.50m x 12.33m</text>
+
+    <!-- Lot 01 -->
+    <rect x="150" y="355.2" width="152.5" height="61.8" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="152" y="357.2" width="148.5" height="57.8" fill="rgba(130, 181, 21, 0.02)" />
+    <text x="226" y="391" font-size="14" font-weight="bold" fill="#82B515" text-anchor="middle">LOTE 01 <tspan font-size="9" fill="#F59E0B">★</tspan></text>
+    <text x="226" y="407" font-size="8" font-weight="bold" fill="#82B515" text-anchor="middle">Esquina • VENDIDO</text>
+
+    <!-- Technical Side Dimensions for Column A (Inside) -->
+    <!-- Horizontal markers for widths -->
+    <line x1="150" y1="180" x2="302.5" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="226" y="177" font-size="7.5" fill="#64748B" text-anchor="middle">30.50 m</text>
+    
+    <!-- Vertical dimensions indicators for side heights -->
+    <line x1="160" y1="170" x2="160" y2="231.8" stroke="#94A3B8" stroke-width="0.75"/>
+    <text x="168" y="206" font-size="7.5" fill="#64748B" text-anchor="start">12.36 m</text>
+    <line x1="160" y1="231.8" x2="160" y2="293.5" stroke="#94A3B8" stroke-width="0.75"/>
+    <text x="168" y="267" font-size="7.5" fill="#64748B" text-anchor="start">12.33 m</text>
+    <line x1="160" y1="293.5" x2="160" y2="355.2" stroke="#94A3B8" stroke-width="0.75"/>
+    <text x="168" y="329" font-size="7.5" fill="#64748B" text-anchor="start">12.33 m</text>
+    <line x1="160" y1="355.2" x2="160" y2="417" stroke="#94A3B8" stroke-width="0.75"/>
+    <text x="168" y="391" font-size="7.5" fill="#64748B" text-anchor="start">12.33 m</text>
+
+
+    <!-- MIDDLE LOTS: Lotes 05, 06, 07 y 08 (Vertical corridor blocks) -->
+    <!-- Lot 05 -->
+    <rect x="302.5" y="170" width="60" height="247" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="304.5" y="172" width="56" height="243" fill="rgba(130, 181, 21, 0.05)" />
+    <!-- Vertical label rotation -->
+    <text x="332.5" y="293" font-size="14" font-weight="bold" fill="#2E312D" transform="rotate(-90, 332.5, 293)" text-anchor="middle">LOTE 05</text>
+    <text x="332.5" y="315" font-size="8.5" font-weight="bold" fill="#82B515" transform="rotate(-90, 332.5, 315)" text-anchor="middle">DISPONIBLE</text>
+    <text x="332.5" y="335" font-size="8" fill="#64748B" transform="rotate(-90, 332.5, 335)" text-anchor="middle">12m x 49.35m</text>
+
+    <!-- Lot 06 -->
+    <rect x="362.5" y="170" width="60" height="247" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="364.5" y="172" width="56" height="243" fill="rgba(130, 181, 21, 0.05)" />
+    <text x="392.5" y="293" font-size="14" font-weight="bold" fill="#2E312D" transform="rotate(-90, 392.5, 293)" text-anchor="middle">LOTE 06</text>
+    <text x="392.5" y="315" font-size="8.5" font-weight="bold" fill="#82B515" transform="rotate(-90, 392.5, 315)" text-anchor="middle">DISPONIBLE</text>
+    <text x="392.5" y="335" font-size="8" fill="#64748B" transform="rotate(-90, 392.5, 335)" text-anchor="middle">12m x 49.35m</text>
+
+    <!-- Lot 07 -->
+    <rect x="422.5" y="170" width="60" height="247" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="424.5" y="172" width="56" height="243" fill="rgba(130, 181, 21, 0.05)" />
+    <text x="452.5" y="293" font-size="14" font-weight="bold" fill="#2E312D" transform="rotate(-90, 452.5, 293)" text-anchor="middle">LOTE 07</text>
+    <text x="452.5" y="315" font-size="8.5" font-weight="bold" fill="#82B515" transform="rotate(-90, 452.5, 315)" text-anchor="middle">DISPONIBLE</text>
+    <text x="452.5" y="335" font-size="8" fill="#64748B" transform="rotate(-90, 452.5, 335)" text-anchor="middle">12m x 49.35m</text>
+
+    <!-- Lot 08 -->
+    <rect x="482.5" y="170" width="60" height="247" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="484.5" y="172" width="56" height="243" fill="rgba(130, 181, 21, 0.05)" />
+    <text x="512.5" y="293" font-size="14" font-weight="bold" fill="#2E312D" transform="rotate(-90, 512.5, 293)" text-anchor="middle">LOTE 08</text>
+    <text x="512.5" y="315" font-size="8.5" font-weight="bold" fill="#82B515" transform="rotate(-90, 512.5, 315)" text-anchor="middle">DISPONIBLE</text>
+    <text x="512.5" y="335" font-size="8" fill="#64748B" transform="rotate(-90, 512.5, 335)" text-anchor="middle">12m x 49.35m</text>
+
+    <!-- Technical markings inside middle lots -->
+    <!-- Double arrows representing depth/height -->
+    <line x1="452.5" y1="185" x2="452.5" y2="402" stroke="#82B515" stroke-width="1" stroke-dasharray="1 3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text x="461" y="210" font-size="8" font-weight="bold" fill="#82B515">CORREDOR 49.35 m (De Fondo)</text>
+
+    <!-- Front line markers on the street -->
+    <line x1="302.5" y1="410" x2="362.5" y2="410" stroke="#94A3B8" stroke-width="0.75" />
+    <text x="332.5" y="405" font-size="7" fill="#64748B" text-anchor="middle">12.00m</text>
+    <line x1="362.5" y1="410" x2="422.5" y2="410" stroke="#94A3B8" stroke-width="0.75" />
+    <text x="392.5" y="405" font-size="7" fill="#64748B" text-anchor="middle">12.00m</text>
+    <line x1="422.5" y1="410" x2="482.5" y2="410" stroke="#94A3B8" stroke-width="0.75" />
+    <text x="452.5" y="405" font-size="7" fill="#64748B" text-anchor="middle">12.00m</text>
+    <line x1="482.5" y1="410" x2="542.5" y2="410" stroke="#94A3B8" stroke-width="0.75" />
+    <text x="512.5" y="405" font-size="7" fill="#64748B" text-anchor="middle">12.00m</text>
+
+
+    <!-- COLUMN B (RIGHT): Lotes 09 al 12 -->
+    <!-- Lot 09 -->
+    <rect x="542.5" y="170" width="192.5" height="61.8" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="544.5" y="172" width="188.5" height="57.8" fill="rgba(130, 181, 21, 0.02)" />
+    <text x="638.75" y="206" font-size="14" font-weight="bold" fill="#2E312D" text-anchor="middle">LOTE 09</text>
+    <text x="638.75" y="222" font-size="8" fill="#64748B" text-anchor="middle">38.50m x 12.36m</text>
+
+    <!-- Lot 10 -->
+    <rect x="542.5" y="231.8" width="192.5" height="61.7" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="544.5" y="233.8" width="188.5" height="57.7" fill="rgba(130, 181, 21, 0.02)" />
+    <text x="638.75" y="267" font-size="14" font-weight="bold" fill="#2E312D" text-anchor="middle">LOTE 10</text>
+    <text x="638.75" y="283" font-size="8" fill="#64748B" text-anchor="middle">38.50m x 12.33m</text>
+
+    <!-- Lot 11 -->
+    <rect x="542.5" y="293.5" width="192.5" height="61.7" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="544.5" y="295.5" width="188.5" height="57.7" fill="rgba(130, 181, 21, 0.02)" />
+    <text x="638.75" y="329" font-size="14" font-weight="bold" fill="#2E312D" text-anchor="middle">LOTE 11</text>
+    <text x="638.75" y="345" font-size="8" fill="#64748B" text-anchor="middle">38.50m x 12.33m</text>
+
+    <!-- Lot 12 -->
+    <rect x="542.5" y="355.2" width="192.5" height="61.8" fill="none" stroke="#2E312D" stroke-width="1.5"/>
+    <rect x="544.5" y="357.2" width="188.5" height="57.8" fill="rgba(130, 181, 21, 0.02)" />
+    <text x="638.75" y="391" font-size="14" font-weight="bold" fill="#2E312D" text-anchor="middle">LOTE 12</text>
+    <text x="638.75" y="407" font-size="8" fill="#64748B" text-anchor="middle">38.50m x 12.33m</text>
+
+    <!-- Right-hand side dimension tags -->
+    <line x1="542.5" y1="180" x2="735" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="638.75" y="177" font-size="7.5" fill="#64748B" text-anchor="middle">38.50 m</text>
+    
+    <line x1="725" y1="170" x2="725" y2="231.8" stroke="#94A3B8" stroke-width="0.75"/>
+    <text x="717" y="206" font-size="7.5" fill="#64748B" text-anchor="end">12.36 m</text>
+    <line x1="725" y1="231.8" x2="725" y2="293.5" stroke="#94A3B8" stroke-width="0.75"/>
+    <text x="717" y="267" font-size="7.5" fill="#64748B" text-anchor="end">12.33 m</text>
+    <line x1="725" y1="293.5" x2="725" y2="355.2" stroke="#94A3B8" stroke-width="0.75"/>
+    <text x="717" y="329" font-size="7.5" fill="#64748B" text-anchor="end">12.33 m</text>
+    <line x1="725" y1="355.2" x2="725" y2="417" stroke="#94A3B8" stroke-width="0.75"/>
+    <text x="717" y="391" font-size="7.5" fill="#64748B" text-anchor="end">12.33 m</text>
+  </g>
+
+  <!-- Technical specifications footer inside box -->
+  <g transform="translate(160, 510)">
+    <rect x="0" y="0" width="585" height="65" fill="#FAFBF9" stroke="#E2E8F0" stroke-width="1" rx="8"/>
+    <!-- Legends / Color coding -->
+    <circle cx="20" cy="22" r="6" fill="rgba(130, 181, 21, 0.45)" stroke="#82B515" stroke-width="1"/>
+    <text x="32" y="25" font-size="11" font-weight="bold" fill="#3D403E">Lotes Disponibles (Financiación Sola Firma)</text>
+
+    <circle cx="20" cy="45" r="6" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+    <text x="32" y="48" font-size="11" font-weight="bold" fill="#64748B">Lotes No Disponibles / Vendidos</text>
+
+    <line x1="390" y1="20" x2="410" y2="20" stroke="#82B515" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <text x="420" y="24" font-size="10.5" font-weight="bold" fill="#3D403E">Servicios: Red Eléctrica ANDE</text>
+
+    <line x1="390" y1="42" x2="410" y2="42" stroke="#475569" stroke-width="1.5"/>
+    <text x="420" y="46" font-size="10.5" font-weight="bold" fill="#3D403E">Ambas Calles con salida al Río</text>
+  </g>
+</svg>
